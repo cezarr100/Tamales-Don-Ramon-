@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menú | Tamales Don Ramón</title>
+  <meta name="description" content="Menú de Tamales Don Ramón: tamales de elote dulce, elote con rajas, carne de puerco y piña. Pide por WhatsApp.">
+  <meta property="og:title" content="Menú | Tamales Don Ramón">
+  <meta property="og:description" content="Menú de Tamales Don Ramón: tamales de elote dulce, elote con rajas, carne de puerco y piña. Pide por WhatsApp.">
+  <meta property="og:type" content="website">
+  <!-- CAMBIAR: usa una imagen propia (assets/img/og.jpg) y la URL completa de tu sitio al publicarlo -->
+  <meta property="og:image" content="assets/img/og.jpg">
+  <!-- Favicon: tu logo -->
+  <link rel="icon" href="assets/logo.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/ecommerce.css">
+</head>
+<body>
+  <!-- ============ HEADER ============ -->
+  <header class="header">
+    <div class="contenedor">
+      <a href="index.html" class="marca" aria-label="Tamales Don Ramón - Inicio">
+        <img src="assets/logo.png" alt="Logo de Tamales Don Ramón">
+        <span>Tamales<br>Don Ramón</span>
+      </a>
+      <nav class="nav-escritorio" aria-label="Navegación principal"><a href="index.html">Inicio</a><a href="menu.html" class="activo">Menú</a><a href="nosotros.html">Nosotros</a><a href="servicios.html">Servicios</a><a href="contacto.html">Contacto</a></nav>
+      <button class="hamburguesa" id="btn-hamburguesa" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="panel-lateral">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Panel lateral deslizante -->
+  <div class="overlay" id="overlay"></div>
+  <aside class="panel-lateral" id="panel-lateral" aria-hidden="true" aria-label="Menú de navegación">
+    <div class="panel-cabecera">
+      <img src="assets/logo.png" alt="Logo de Tamales Don Ramón">
+      <button class="panel-cerrar" id="panel-cerrar" aria-label="Cerrar menú">✕</button>
+    </div>
+    <nav aria-label="Menú móvil">
+        <a href="index.html">Inicio</a>
+        <a href="menu.html" class="activo">Menú</a>
+        <a href="nosotros.html">Nosotros</a>
+        <a href="servicios.html">Servicios</a>
+        <a href="contacto.html">Contacto</a>
+    </nav>
+    <a class="btn btn-whatsapp btn-block" href="https://wa.me/526184463758?text=Hola%20Tamales%20Don%20Ram%C3%B3n,%20quiero%20hacer%20un%20pedido." target="_blank" rel="noopener">📞 Pedir por WhatsApp</a>
+  </aside>
+
+  <main>
+    <!-- IMAGEN ACTUALIZADA: Se usa assets/img/tamal-rajas.jpg como fondo del hero -->
+    <section class="hero-pagina" style="--fondo: url('assets/img/tamal-rajas.jpg')">
+      <div class="contenedor">
+        <h1>Nuestro Menú</h1>
+        <p>Tamales artesanales hechos a mano. Elige tu favorito y pídelo por WhatsApp.</p>
+      </div>
+    </section>
+
+    <section class="seccion">
+      <div class="contenedor">
+        <div class="titulo-seccion fade-in-up"><h2>Los 4 clásicos de Don Ramón</h2><span class="linea"></span>
+          <p>Precios en pesos mexicanos (MXN). <!-- CAMBIAR: ajusta precios --></p></div>
+        <div class="grid grid-4">
+        <article class="tarjeta fade-in-up">
+          <div class="img-wrap">
+            <!-- IMAGEN ACTUALIZADA: assets/img/tamal-elote.jpg -->
+            <img src="assets/img/tamal-elote.jpg" alt="Tamales de Elote Dulces" loading="lazy">
+          </div>
+          <div class="tarjeta-cuerpo">
+            <span class="etiqueta">Dulces, esponjosos, elote tierno</span>
+            <h3>🌽 Tamales de Elote Dulces</h3>
+            <p>Hechos con elote tierno molido, mantequilla y un toque de canela. Suaves y esponjosos.</p>
+            <span class="precio precio-dinamico">$18 <small>MXN · Por pieza (IVA incl.)</small></span>
+            <div class="selector-presentacion"><button type="button" class="btn-opcion-pres activa" data-pres="pieza" data-precio="18">Pieza</button><button type="button" class="btn-opcion-pres" data-pres="docena" data-precio="192">Docena</button></div>
+            <div class="acciones-tarjeta"><button type="button" class="btn btn-primario btn-block btn-sm" data-add-id="tamal-elote" data-add-pres="pieza">🛒 Añadir al carrito</button>
+              <button type="button" class="btn btn-whatsapp btn-block" data-pedido="Tamales de Elote Dulces">Pedir por WhatsApp</button></div>
+          </div>
+        </article>
+        <article class="tarjeta fade-in-up">
+          <div class="img-wrap">
+            <!-- IMAGEN ACTUALIZADA: assets/img/tamal-rajas.jpg -->
+            <img src="assets/img/tamal-rajas.jpg" alt="Tamales de Elote con Rajas" loading="lazy">
+          </div>
+          <div class="tarjeta-cuerpo">
+            <span class="etiqueta">Elote dulce con rajas y queso</span>
+            <h3>🌶️ Tamales de Elote con Rajas</h3>
+            <p>Masa de elote dulce con rajas de chile poblano y queso fresco derretido.</p>
+            <span class="precio precio-dinamico">$22 <small>MXN · Por pieza (IVA incl.)</small></span>
+            <div class="selector-presentacion"><button type="button" class="btn-opcion-pres activa" data-pres="pieza" data-precio="22">Pieza</button><button type="button" class="btn-opcion-pres" data-pres="docena" data-precio="240">Docena</button></div>
+            <div class="acciones-tarjeta"><button type="button" class="btn btn-primario btn-block btn-sm" data-add-id="tamal-rajas" data-add-pres="pieza">🛒 Añadir al carrito</button>
+              <button type="button" class="btn btn-whatsapp btn-block" data-pedido="Tamales de Elote con Rajas">Pedir por WhatsApp</button></div>
+          </div>
+        </article>
+        <article class="tarjeta fade-in-up">
+          <div class="img-wrap">
+            <!-- IMAGEN ACTUALIZADA: assets/img/tamal-puerco.jpg -->
+            <img src="assets/img/tamal-puerco.jpg" alt="Tamales de Carne de Puerco" loading="lazy">
+          </div>
+          <div class="tarjeta-cuerpo">
+            <span class="etiqueta">Rellenos de puerco en salsa roja</span>
+            <h3>🥩 Tamales de Carne de Puerco</h3>
+            <p>Masa de maíz rellena de carne de puerco deshebrada en salsa roja de chile guajillo.</p>
+            <span class="precio precio-dinamico">$25 <small>MXN · Por pieza (IVA incl.)</small></span>
+            <div class="selector-presentacion"><button type="button" class="btn-opcion-pres activa" data-pres="pieza" data-precio="25">Pieza</button><button type="button" class="btn-opcion-pres" data-pres="docena" data-precio="276">Docena</button></div>
+            <div class="acciones-tarjeta"><button type="button" class="btn btn-primario btn-block btn-sm" data-add-id="tamal-puerco" data-add-pres="pieza">🛒 Añadir al carrito</button>
+              <button type="button" class="btn btn-whatsapp btn-block" data-pedido="Tamales de Carne de Puerco">Pedir por WhatsApp</button></div>
+          </div>
+        </article>
+        <article class="tarjeta fade-in-up">
+          <div class="img-wrap">
+            <!-- IMAGEN ACTUALIZADA: assets/img/tamal-pina.jpg -->
+            <img src="assets/img/tamal-pina.jpg" alt="Tamales de Piña" loading="lazy">
+          </div>
+          <div class="tarjeta-cuerpo">
+            <span class="etiqueta">Toque dulce tropical</span>
+            <h3>🍍 Tamales de Piña</h3>
+            <p>Masa dulce con trozos de piña natural y pasitas. El postre perfecto.</p>
+            <span class="precio precio-dinamico">$18 <small>MXN · Por pieza (IVA incl.)</small></span>
+            <div class="selector-presentacion"><button type="button" class="btn-opcion-pres activa" data-pres="pieza" data-precio="18">Pieza</button><button type="button" class="btn-opcion-pres" data-pres="docena" data-precio="192">Docena</button></div>
+            <div class="acciones-tarjeta"><button type="button" class="btn btn-primario btn-block btn-sm" data-add-id="tamal-pina" data-add-pres="pieza">🛒 Añadir al carrito</button>
+              <button type="button" class="btn btn-whatsapp btn-block" data-pedido="Tamales de Piña">Pedir por WhatsApp</button></div>
+          </div>
+        </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="seccion alt">
+      <div class="contenedor grid grid-2">
+        <div class="caja fade-in-up">
+          <h2>Bebidas y complementos</h2>
+          <div style="margin-top:1rem"><div class="item-complemento"><div class="comp-info"><span>🥛 Atole de vainilla</span><small>Vaso de 350 ml</small></div><div class="comp-acciones"><strong>$20</strong><button type="button" class="btn-agregar-mini" data-add-id="atole-vainilla" data-add-pres="pieza">🛒 Agregar</button></div></div><div class="item-complemento"><div class="comp-info"><span>🍫 Champurrado</span><small>Vaso de 350 ml</small></div><div class="comp-acciones"><strong>$25</strong><button type="button" class="btn-agregar-mini" data-add-id="champurrado" data-add-pres="pieza">🛒 Agregar</button></div></div><div class="item-complemento"><div class="comp-info"><span>☕ Café de olla</span><small>Vaso de 350 ml</small></div><div class="comp-acciones"><strong>$20</strong><button type="button" class="btn-agregar-mini" data-add-id="cafe-olla" data-add-pres="pieza">🛒 Agregar</button></div></div><div class="item-complemento"><div class="comp-info"><span>🌶️ Salsa extra</span><small>Roja o verde, 100 ml</small></div><div class="comp-acciones"><strong>$10</strong><button type="button" class="btn-agregar-mini" data-add-id="salsa-extra" data-add-pres="pieza">🛒 Agregar</button></div></div></div>
+        </div>
+        <div class="caja fade-in-up" style="background:var(--cafe-oscuro);color:var(--crema)">
+          <h2 style="color:var(--maiz)">Horarios de atención</h2>
+          <ul class="horarios" style="margin-top:1rem">
+            <li><span>Lunes a viernes</span><strong>7:00 am – 8:00 pm</strong></li>
+            <li><span>Sábado</span><strong>7:00 am – 9:00 pm</strong></li>
+            <li><span>Domingo</span><strong>8:00 am – 3:00 pm</strong></li>
+          </ul>
+          <a href="https://wa.me/526184463758?text=Hola%20Tamales%20Don%20Ram%C3%B3n,%20quiero%20hacer%20un%20pedido." target="_blank" rel="noopener" class="btn btn-maiz btn-block" style="margin-top:1.4rem">📞 Pedir por WhatsApp</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="contenedor">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-logo">
+            <img src="assets/logo.png" alt="Logo de Tamales Don Ramón" loading="lazy">
+            <strong>Tamales Don Ramón</strong>
+          </div>
+          <p>Hechos a mano, como debe ser. Desde 2015, el mismo sabor de siempre.</p>
+          <div class="redes">
+            <!-- CAMBIAR: sustituye los # por tus perfiles reales -->
+            <a href="#" aria-label="Facebook">f</a>
+            <a href="#" aria-label="Instagram">◎</a>
+            <a href="#" aria-label="TikTok">♪</a>
+          </div>
+        </div>
+        <div>
+          <h4>Mapa del sitio</h4>
+          <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="menu.html">Menú</a></li>
+            <li><a href="nosotros.html">Nosotros</a></li>
+            <li><a href="servicios.html">Servicios</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Horarios</h4>
+          <ul>
+            <li>Lun – Vie: 7:00 am – 8:00 pm</li>
+            <li>Sábado: 7:00 am – 9:00 pm</li>
+            <li>Domingo: 8:00 am – 3:00 pm</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contacto</h4>
+          <ul>
+            <li>✉️ <a href="mailto:Tamalesdonramon@Tmr.com.mx">Tamalesdonramon@Tmr.com.mx</a></li>
+            <li>💬 <a href="https://wa.me/526184463758?text=Hola%20Tamales%20Don%20Ram%C3%B3n,%20quiero%20hacer%20un%20pedido." target="_blank" rel="noopener">WhatsApp 618 446 3758</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="copy">&copy; 2026 Tamales Don Ramón. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- Botón flotante de WhatsApp -->
+  <a class="wa-flotante" href="https://wa.me/526184463758?text=Hola%20Tamales%20Don%20Ram%C3%B3n,%20quiero%20hacer%20un%20pedido." target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3C8.8 3 3 8.8 3 16c0 2.3.6 4.5 1.7 6.4L3 29l6.8-1.8A13 13 0 0 0 16 29c7.2 0 13-5.8 13-13S23.2 3 16 3zm0 23.7c-2 0-3.9-.5-5.6-1.5l-.4-.2-4 1 1.1-3.9-.3-.4A10.7 10.7 0 1 1 16 26.7zm5.9-8c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1-.3-.2-1.4-.5-2.6-1.6-1-.9-1.6-1.9-1.8-2.3-.2-.3 0-.5.1-.7l.5-.5c.2-.2.2-.3.3-.5.1-.2.1-.4 0-.5l-1-2.3c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.900 1.200 3.100c.2.2 2.100 3.300 5.200 4.600 3.100 1.300 3.100.9 3.700.8.600-.1 1.900-.8 2.100-1.500.3-.7.3-1.400.2-1.500-.1-.1-.3-.2-.6-.4z"/></svg></a>
+
+  <script src="js/script.js"></script>
+  <script src="js/productos.js"></script>
+  <script src="js/cart-store.js"></script>
+  <script src="js/cart-ui.js"></script>
+</body>
+</html>

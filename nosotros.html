@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nosotros | Tamales Don Ramón</title>
+  <meta name="description" content="Conoce la misión, visión e historia de Tamales Don Ramón: tradición artesanal desde 2015.">
+  <meta property="og:title" content="Nosotros | Tamales Don Ramón">
+  <meta property="og:description" content="Conoce la misión, visión e historia de Tamales Don Ramón: tradición artesanal desde 2015.">
+  <meta property="og:type" content="website">
+  <!-- CAMBIAR: usa una imagen propia (assets/img/og.jpg) y la URL completa de tu sitio al publicarlo -->
+  <meta property="og:image" content="assets/img/og.jpg">
+  <!-- Favicon: tu logo -->
+  <link rel="icon" href="assets/logo.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/ecommerce.css">
+</head>
+<body>
+  <!-- ============ HEADER ============ -->
+  <header class="header">
+    <div class="contenedor">
+      <a href="index.html" class="marca" aria-label="Tamales Don Ramón - Inicio">
+        <img src="assets/logo.png" alt="Logo de Tamales Don Ramón">
+        <span>Tamales<br>Don Ramón</span>
+      </a>
+      <nav class="nav-escritorio" aria-label="Navegación principal"><a href="index.html">Inicio</a><a href="menu.html">Menú</a><a href="nosotros.html" class="activo">Nosotros</a><a href="servicios.html">Servicios</a><a href="contacto.html">Contacto</a></nav>
+      <button class="hamburguesa" id="btn-hamburguesa" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="panel-lateral">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Panel lateral deslizante -->
+  <div class="overlay" id="overlay"></div>
+  <aside class="panel-lateral" id="panel-lateral" aria-hidden="true" aria-label="Menú de navegación">
+    <div class="panel-cabecera">
+      <img src="assets/logo.png" alt="Logo de Tamales Don Ramón">
+      <button class="panel-cerrar" id="panel-cerrar" aria-label="Cerrar menú">✕</button>
+    </div>
+    <nav aria-label="Menú móvil">
+        <a href="index.html">Inicio</a>
+        <a href="menu.html">Menú</a>
+        <a href="nosotros.html" class="activo">Nosotros</a>
+        <a href="servicios.html">Servicios</a>
+        <a href="contacto.html">Contacto</a>
+    </nav>
+    <a class="btn btn-whatsapp btn-block" href="https://wa.me/526184463758?text=Hola%20Tamales%20Don%20Ram%C3%B3n,%20quiero%20hacer%20un%20pedido." target="_blank" rel="noopener">📞 Pedir por WhatsApp</a>
+  </aside>
+
+  <main>
+    <!-- IMAGEN ACTUALIZADA: Se usa assets/img/tamal-elote.jpg como fondo del hero -->
+    <section class="hero-pagina" style="--fondo: url('assets/img/tamal-elote.jpg')">
+      <div class="contenedor">
+        <h1>Nosotros</h1>
+        <p>Una familia, una receta y muchas ganas de llevar el sabor de casa a tu mesa.</p>
+      </div>
+    </section>
+
+    <section class="seccion">
+      <div class="contenedor">
+        <div class="grid grid-2">
+          <article class="mv-tarjeta fade-in-up">
+            <span class="icono">🎯</span>
+            <h3>Misión</h3>
+            <p>En Tamales Don Ramón elaboramos tamales artesanales con recetas tradicionales, ingredientes frescos y el sazón de casa, para llevar a cada mesa el auténtico sabor mexicano con calidad, calidez y servicio cercano.</p>
+          </article>
+          <article class="mv-tarjeta fade-in-up">
+            <span class="icono">🚀</span>
+            <h3>Visión</h3>
+            <p>Ser el negocio de tamales de referencia en la región, reconocido por nuestra calidad, tradición e innovación, expandiendo nuestro servicio a domicilio y llevando el sabor de Don Ramón a más hogares cada día.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="seccion alt">
+      <div class="contenedor historia">
+        <div class="fade-in-up">
+          <h2>Nuestra historia</h2>
+          <!-- CAMBIAR: reemplaza con la historia real de tu negocio -->
+          <p style="margin-top:1rem">Todo comenzó en 2015, en la cocina de casa de Don Ramón, con una olla grande, hojas de maíz y la receta que su familia preparaba en cada celebración. Lo que empezó como un gusto por compartir se convirtió en un negocio querido por los vecinos.</p>
+          <p style="margin-top:.8rem">Hoy seguimos haciendo cada tamal a mano, con el mismo cuidado y el mismo sabor de siempre. Porque algunas cosas, cuando están bien hechas, no necesitan cambiar.</p>
+          <a href="menu.html" class="btn btn-primario" style="margin-top:1.4rem">Conoce nuestro menú</a>
+        </div>
+        <!-- CAMBIAR: assets/img/fundador.jpg (Sigue siendo imagen de ejemplo) -->
+        <img class="fade-in-up" src="assets/img/Don-Ramon.png" alt="Don Ramón, fundador de Tamales Don Ramón" loading="lazy">
+      </div>
+    </section>
+
+    <section class="seccion">
+      <div class="contenedor">
+        <div class="titulo-seccion fade-in-up"><h2>Nuestros valores</h2><span class="linea"></span></div>
+        <div class="grid grid-4"><article class="valor fade-in-up"><span class="icono">🏺</span><h3>Tradición</h3></article><article class="valor fade-in-up"><span class="icono">⭐</span><h3>Calidad</h3></article><article class="valor fade-in-up"><span class="icono">🤝</span><h3>Compromiso</h3></article><article class="valor fade-in-up"><span class="icono">❤️</span><h3>Calidez</h3></article></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="contenedor">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-logo">
+            <img src="assets/logo.png" alt="Logo de Tamales Don Ramón" loading="lazy">
+            <strong>Tamales Don Ramón</strong>
+          </div>
+          <p>Hechos a mano, como debe ser. Desde 2015, el mismo sabor de siempre.</p>
+          <div class="redes">
+            <!-- CAMBIAR: sustituye los # por tus perfiles reales -->
+            <a href="#" aria-label="Facebook">f</a>
+            <a href="#" aria-label="Instagram">◎</a>
+            <a href="#" aria-label="TikTok">♪</a>
+          </div>
+        </div>
+        <div>
+          <h4>Mapa del sitio</h4>
+          <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="menu.html">Menú</a></li>
+            <li><a href="nosotros.html">Nosotros</a></li>
+            <li><a href="servicios.html">Servicios</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Horarios</h4>
+          <ul>
+            <li>Lun – Vie: 7:00 am – 8:00 pm</li>
+            <li>Sábado: 7:00 am – 9:00 pm</li>
+            <li>Domingo: 8:00 am – 3:00 pm</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contacto</h4>
+          <ul>
+            <li>✉️ <a href="mailto:Tamalesdonramon@Tmr.com.mx">Tamalesdonramon@Tmr.com.mx</a></li>
+            <li>💬 <a href="https://wa.me/526184463758?text=Hola%20Tamales%20Don%20Ram%C3%B3n,%20quiero%20hacer%20un%20pedido." target="_blank" rel="noopener">WhatsApp 618 446 3758</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="copy">&copy; 2026 Tamales Don Ramón. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- Botón flotante de WhatsApp -->
+  <a class="wa-flotante" href="https://wa.me/526184463758?text=Hola%20Tamales%20Don%20Ram%C3%B3n,%20quiero%20hacer%20un%20pedido." target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3C8.8 3 3 8.8 3 16c0 2.3.6 4.5 1.7 6.4L3 29l6.8-1.8A13 13 0 0 0 16 29c7.2 0 13-5.8 13-13S23.2 3 16 3zm0 23.7c-2 0-3.9-.5-5.6-1.5l-.4-.2-4 1 1.1-3.9-.3-.4A10.7 10.7 0 1 1 16 26.7zm5.9-8c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1-.3-.2-1.4-.5-2.6-1.6-1-.9-1.6-1.9-1.8-2.3-.2-.3 0-.5.1-.7l.5-.5c.2-.2.2-.3.3-.5.1-.2.1-.4 0-.5l-1-2.3c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.900 1.200 3.100c.2.2 2.100 3.300 5.200 4.600 3.100 1.300 3.100.9 3.700.8.600-.1 1.900-.8 2.100-1.500.3-.7.3-1.400.2-1.500-.1-.1-.3-.2-.6-.4z"/></svg></a>
+
+  <script src="js/script.js"></script>
+  <script src="js/productos.js"></script>
+  <script src="js/cart-store.js"></script>
+  <script src="js/cart-ui.js"></script>
+</body>
+</html>

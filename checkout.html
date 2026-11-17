@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Finalizar Pedido | Tamales Don Ramón</title>
+  <link rel="icon" href="assets/logo.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/ecommerce.css">
+</head>
+<body>
+  <header class="header">
+    <div class="contenedor">
+      <a href="index.html" class="marca" aria-label="Tamales Don Ramón - Inicio">
+        <img src="assets/logo.png" alt="Logo de Tamales Don Ramón">
+        <span>Tamales<br>Don Ramón</span>
+      </a>
+      <nav class="nav-escritorio" aria-label="Navegación principal">
+        <a href="index.html">Inicio</a>
+        <a href="menu.html">Menú</a>
+        <a href="nosotros.html">Nosotros</a>
+        <a href="servicios.html">Servicios</a>
+        <a href="contacto.html">Contacto</a>
+      </nav>
+      <button class="hamburguesa" id="btn-hamburguesa" aria-label="Abrir menú" aria-expanded="false" aria-controls="panel-lateral">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="overlay" id="overlay"></div>
+  <aside class="panel-lateral" id="panel-lateral" aria-hidden="true">
+    <div class="panel-cabecera">
+      <img src="assets/logo.png" alt="Logo de Tamales Don Ramón">
+      <button class="panel-cerrar" id="panel-cerrar" aria-label="Cerrar menú">✕</button>
+    </div>
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="menu.html">Menú</a>
+      <a href="nosotros.html">Nosotros</a>
+      <a href="servicios.html">Servicios</a>
+      <a href="contacto.html">Contacto</a>
+    </nav>
+  </aside>
+
+  <main>
+    <section class="hero-pagina" style="--fondo: url('assets/img/tamal-elote.jpg'); padding: 2.5rem 0;">
+      <div class="contenedor">
+        <h1>Finalizar Compra</h1>
+        <p>Completa tus datos para preparar tus tamales calientitos.</p>
+      </div>
+    </section>
+
+    <section class="seccion">
+      <div class="contenedor">
+        <!-- Alerta de carrito vacío -->
+        <div id="checkout-vacio" class="caja oculto" style="text-align:center;max-width:540px;margin:0 auto;">
+          <span style="font-size:3.5rem;">🫔</span>
+          <h2 style="margin:.5rem 0;">Tu carrito está vacío</h2>
+          <p style="margin-bottom:1.2rem;">Agrega algunos tamales o bebidas antes de proceder al pago.</p>
+          <a href="menu.html" class="btn btn-primario">Ver Menú</a>
+        </div>
+
+        <!-- Alerta de cancelación / error desde Mercado Pago -->
+        <div id="alerta-mp" class="caja oculto" style="background:#fee2e2;border:2px solid #dc2626;margin-bottom:1.5rem;">
+          <strong style="color:#991b1b;">⚠️ El pago en Mercado Pago no se completó o fue cancelado.</strong>
+          <p style="font-size:.92rem;margin-top:.3rem;">Tu carrito sigue guardado. Puedes intentar de nuevo o elegir otro método de pago.</p>
+        </div>
+
+        <form id="form-checkout" class="checkout-grid" novalidate>
+          <!-- COLUMNA IZQUIERDA: FORMULARIO -->
+          <div style="display:flex;flex-direction:column;gap:1.5rem;">
+            <!-- Paso 1: Datos del cliente -->
+            <div class="caja">
+              <h2 class="paso-titulo"><span class="paso-num">1</span> Datos del cliente</h2>
+              <div class="formulario">
+                <div class="campo">
+                  <label for="chk-nombre">Nombre completo *</label>
+                  <input type="text" id="chk-nombre" name="nombre" placeholder="Ej. Juan Pérez López" required>
+                  <span class="mensaje-error"></span>
+                </div>
+                <div class="form-fila-2">
+                  <div class="campo">
+                    <label for="chk-email">Correo electrónico *</label>
+                    <input type="email" id="chk-email" name="email" placeholder="correo@ejemplo.com" required>
+                    <span class="mensaje-error"></span>
+                  </div>
+                  <div class="campo">
+                    <label for="chk-telefono">Teléfono / WhatsApp (10 dígitos) *</label>
+                    <input type="tel" id="chk-telefono" name="telefono" placeholder="6181234567" required>
+                    <span class="mensaje-error"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Paso 2: Método de entrega -->
+            <div class="caja">
+              <h2 class="paso-titulo"><span class="paso-num">2</span> Método de entrega</h2>
+              <div class="opciones-radio-grid">
+                <label class="radio-card seleccionada" id="card-entrega-domicilio">
+                  <input type="radio" name="tipoEntrega" value="domicilio" checked>
+                  <strong>🛵 Envío a domicilio</strong>
+                  <small>$15 MXN (Gratis en pedidos &gt; $150 MXN)</small>
+                </label>
+                <label class="radio-card" id="card-entrega-tienda">
+                  <input type="radio" name="tipoEntrega" value="tienda">
+                  <strong>🏪 Recoger en tienda</strong>
+                  <small>Sin costo ($0 MXN) · Calle Ejemplo #123, Centro</small>
+                </label>
+              </div>
+
+              <div id="bloque-direccion" class="formulario">
+                <div class="campo">
+                  <label for="chk-calle">Calle y número exterior / interior *</label>
+                  <input type="text" id="chk-calle" name="calle" placeholder="Ej. Av. 20 de Noviembre #450">
+                  <span class="mensaje-error"></span>
+                </div>
+                <div class="form-fila-2">
+                  <div class="campo">
+                    <label for="chk-colonia">Colonia *</label>
+                    <input type="text" id="chk-colonia" name="colonia" placeholder="Ej. Zona Centro">
+                    <span class="mensaje-error"></span>
+                  </div>
+                  <div class="campo">
+                    <label for="chk-cp">Código Postal (5 dígitos) *</label>
+                    <input type="text" id="chk-cp" name="cp" maxlength="5" placeholder="34000">
+                    <span class="mensaje-error"></span>
+                  </div>
+                </div>
+                <div class="campo">
+                  <label for="chk-referencias">Referencias de entrega (opcional)</label>
+                  <input type="text" id="chk-referencias" name="referencias" placeholder="Portón café, frente a la tienda...">
+                </div>
+              </div>
+
+              <div id="bloque-tienda" class="panel-condicional oculto">
+                <strong>📍 Punto de recolección:</strong>
+                <p style="font-size:.92rem;margin-top:.3rem;">Sucursal Matriz — Calle Ejemplo #123, Zona Centro, Victoria de Durango, Dgo. Tu pedido estará listo en 25–30 minutos.</p>
+              </div>
+            </div>
+
+            <!-- Paso 3: Facturación SAT (Opcional) -->
+            <div class="caja">
+              <label style="display:flex;align-items:center;gap:.6rem;cursor:pointer;font-weight:600;">
+                <input type="checkbox" id="chk-requiere-factura" style="width:18px;height:18px;accent-color:var(--rojo);">
+                <span>🧾 Requiero factura electrónica (CFDI 4.0)</span>
+              </label>
+
+              <div id="bloque-factura" class="panel-condicional oculto formulario" style="margin-top:1rem;">
+                <div class="form-fila-2">
+                  <div class="campo">
+                    <label for="chk-rfc">RFC *</label>
+                    <input type="text" id="chk-rfc" name="rfc" maxlength="13" placeholder="XAXX010101000" style="text-transform:uppercase;">
+                    <span class="mensaje-error"></span>
+                  </div>
+                  <div class="campo">
+                    <label for="chk-razon">Razón Social *</label>
+                    <input type="text" id="chk-razon" name="razonSocial" placeholder="Nombre o empresa sin régimen">
+                    <span class="mensaje-error"></span>
+                  </div>
+                </div>
+                <div class="campo">
+                  <label for="chk-cp-fiscal">Código postal del domicilio fiscal *</label>
+                  <input type="text" id="chk-cp-fiscal" name="cpFiscal" maxlength="5" placeholder="34000">
+                  <span class="mensaje-error"></span>
+                </div>
+                <div class="form-fila-2">
+                  <div class="campo">
+                    <label for="chk-regimen">Régimen Fiscal</label>
+                    <select id="chk-regimen" name="regimen">
+                      <option value="612">612 - Personas Físicas con Actividades Empresariales</option>
+                      <option value="626">626 - Régimen Simplificado de Confianza (RESICO)</option>
+                      <option value="605">605 - Sueldos y Salarios</option>
+                      <option value="601">601 - General de Ley Personas Morales</option>
+                    </select>
+                  </div>
+                  <div class="campo">
+                    <label for="chk-cfdi">Uso de CFDI</label>
+                    <select id="chk-cfdi" name="usoCfdi">
+                      <option value="G03">G03 - Gastos en general</option>
+                      <option value="G01">G01 - Adquisición de mercancías</option>
+                      <option value="S01">S01 - Sin efectos fiscales</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Paso 4: Método de pago -->
+            <div class="caja">
+              <h2 class="paso-titulo"><span class="paso-num">3</span> Método de pago</h2>
+              <div class="opciones-radio-grid tres">
+                <label class="radio-card seleccionada">
+                  <input type="radio" name="metodoPago" value="mercadopago" checked>
+                  <strong>💳 Mercado Pago</strong>
+                  <small>Tarjeta crédito/débito, OXXO o saldo MP</small>
+                </label>
+                <label class="radio-card">
+                  <input type="radio" name="metodoPago" value="spei">
+                  <strong>🏦 Transferencia SPEI</strong>
+                  <small>CLABE interbancaria y comprobante</small>
+                </label>
+                <label class="radio-card">
+                  <input type="radio" name="metodoPago" value="efectivo">
+                  <strong>💵 Contra entrega</strong>
+                  <small>Paga en efectivo al recibir</small>
+                </label>
+              </div>
+
+              <!-- Info SPEI -->
+              <div id="panel-pago-spei" class="panel-condicional oculto">
+                <p style="font-size:.92rem;margin-bottom:.6rem;">Realiza tu transferencia por el monto total exacto a la siguiente cuenta:</p>
+                <div id="spei-datos" style="background:var(--blanco);padding:.85rem;border-radius:10px;font-size:.9rem;margin-bottom:.8rem;">Cargando datos bancarios…</div>
+                <div class="campo">
+                  <label for="chk-comprobante">Adjuntar comprobante de transferencia (JPG, PNG o PDF) *</label>
+                  <input type="file" id="chk-comprobante" accept="image/jpeg,image/png,application/pdf">
+                  <span class="mensaje-error"></span>
+                </div>
+              </div>
+
+              <!-- Info Efectivo -->
+              <div id="panel-pago-efectivo" class="panel-condicional oculto">
+                <div class="campo">
+                  <label for="chk-billete">¿Con cuánto pagas? (Para llevar cambio)</label>
+                  <input type="text" id="chk-billete" placeholder="Ej. Billete de $200 MXN o pago exacto">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- COLUMNA DERECHA: RESUMEN -->
+          <aside class="caja resumen-sticky">
+            <h2 style="font-size:1.3rem;margin-bottom:1rem;">Resumen del pedido</h2>
+            <div id="resumen-productos"></div>
+
+            <div style="margin-top:1rem;">
+              <div class="desglose-fila">
+                <span>Subtotal (sin IVA)</span>
+                <span id="res-subtotal">$0.00</span>
+              </div>
+              <div class="desglose-fila">
+                <span>IVA (16%)</span>
+                <span id="res-iva">$0.00</span>
+              </div>
+              <div class="desglose-fila">
+                <span>Incluye envío (IVA incl.)</span>
+                <span id="res-envio">$15.00</span>
+              </div>
+              <div class="desglose-fila total">
+                <span>Total a pagar</span>
+                <span id="res-total">$0.00</span>
+              </div>
+            </div>
+
+            <button type="submit" id="btn-confirmar-pedido" class="btn btn-primario btn-block" style="margin-top:.8rem;">
+              Pagar con Mercado Pago
+            </button>
+            <p id="checkout-status-msg" style="text-align:center;font-size:.85rem;margin-top:.7rem;color:var(--cafe);"></p>
+          </aside>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="contenedor">
+      <p class="copy" style="margin-top:0;border:0;">&copy; 2026 Tamales Don Ramón. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="js/config.js"></script>
+  <script src="js/script.js"></script>
+  <script src="js/productos.js"></script>
+  <script src="js/cart-store.js"></script>
+  <script src="js/cart-ui.js"></script>
+  <script src="js/checkout.js"></script>
+</body>
+</html>

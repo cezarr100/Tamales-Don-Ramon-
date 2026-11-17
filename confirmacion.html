@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Confirmación de Pedido | Tamales Don Ramón</title>
+  <link rel="icon" href="assets/logo.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/ecommerce.css">
+</head>
+<body>
+  <header class="header">
+    <div class="contenedor">
+      <a href="index.html" class="marca">
+        <img src="assets/logo.png" alt="Logo de Tamales Don Ramón">
+        <span>Tamales<br>Don Ramón</span>
+      </a>
+      <nav class="nav-escritorio">
+        <a href="index.html">Inicio</a>
+        <a href="menu.html">Menú</a>
+        <a href="nosotros.html">Nosotros</a>
+        <a href="servicios.html">Servicios</a>
+        <a href="contacto.html">Contacto</a>
+      </nav>
+      <button class="hamburguesa" id="btn-hamburguesa" aria-label="Abrir menú" aria-expanded="false" aria-controls="panel-lateral">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="overlay" id="overlay"></div>
+  <aside class="panel-lateral" id="panel-lateral" aria-hidden="true">
+    <div class="panel-cabecera">
+      <img src="assets/logo.png" alt="Logo de Tamales Don Ramón">
+      <button class="panel-cerrar" id="panel-cerrar" aria-label="Cerrar menú">✕</button>
+    </div>
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="menu.html">Menú</a>
+      <a href="nosotros.html">Nosotros</a>
+      <a href="servicios.html">Servicios</a>
+      <a href="contacto.html">Contacto</a>
+    </nav>
+  </aside>
+
+  <main>
+    <section class="seccion">
+      <div class="contenedor" style="max-width:720px;">
+        <div class="caja" id="ticket-confirmacion" style="text-align:center;">
+          <!-- Se llena dinámicamente con js/confirmacion.js -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="contenedor">
+      <p class="copy" style="margin-top:0;border:0;">&copy; 2026 Tamales Don Ramón. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="js/config.js"></script>
+  <script src="js/script.js"></script>
+  <script src="js/productos.js"></script>
+  <script src="js/cart-store.js"></script>
+  <script src="js/cart-ui.js"></script>
+  <script src="js/confirmacion.js"></script>
+</body>
+</html>
