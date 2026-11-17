@@ -149,7 +149,7 @@ ul { list-style: none; }
   justify-content: center; text-align: center; color: var(--blanco); overflow: hidden;
   background:
     linear-gradient(rgba(58,32,16,.72), rgba(126,15,21,.78)),
-    url('../assets/img/maiz.jpg') center/cover no-repeat;
+    url('assets/img/Maiz.jpg') center/cover no-repeat;
 }
 .hero-contenido { padding: 2rem 0; animation: aparecer 1s ease both; }
 .hero-logo {
